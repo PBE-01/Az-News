@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
+    'django_ckeditor_5',
     # apps
     'apps.accounts',
     'apps.base',
@@ -143,4 +145,75 @@ MAILERS = {
     'default': {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
+}
+
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': [
+            'heading', '|',
+            'bold', 'italic', 'link',
+            'bulletedList', 'numberedList',
+            'blockQuote', 'imageUpload'
+        ],
+    },
+
+    'extends': {
+        'blockToolbar': [
+            'paragraph',
+            'heading1',
+            'heading2',
+            'heading3',
+            '|',
+            'bulletedList',
+            'numberedList',
+            'todoList'
+        ],
+
+        'toolbar': [
+            'heading', '|',
+            'outdent', 'indent', '|',
+            'bold', 'italic', 'link',
+            'underline', 'strikethrough',
+            'code', 'subscript', 'superscript',
+            'highlight', '|',
+            'codeBlock',
+            'imageUpload',
+            'blockQuote',
+            'insertTable',
+            'mediaEmbed',
+            'removeFormat',
+            'sourceEditing'
+        ],
+
+        'image': {
+            'toolbar': [
+                'imageTextAlternative', '|',
+                'imageStyle:alignLeft',
+                'imageStyle:alignCenter',
+                'imageStyle:alignRight'
+            ],
+
+            'styles': [
+                'full',
+                'alignLeft',
+                'alignCenter',
+                'alignRight'
+            ]
+        },
+
+        'htmlSupport': {
+            'allow': [
+                {
+                    'name': 'iframe',
+                    'attributes': True,
+                    'classes': True,
+                    'styles': True,
+                },
+            ]
+        },
+    }
 }
