@@ -71,7 +71,7 @@
                             <!-- Logo -->
                             <div class="col-xl-3 col-lg-3 col-md-3">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
+                                    <a href="{% url 'news:home' %}"><img src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-xl-9 col-lg-9 col-md-9">
@@ -88,7 +88,7 @@
                             <div class="col-xl-10 col-lg-10 col-md-12 header-flex">
                                 <!-- sticky -->
                                     <div class="sticky-logo">
-                                        <a href="index.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
+                                        <a href="{% url 'news:home' %}"><img src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
                                     </div>
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-md-block"
@@ -186,20 +186,21 @@
                                                 </div>
 
                                                 <!-- Dropdown -->
-                                                <div class="user-dropdown-menu">
+                                                
+                                                    <div class="user-dropdown-menu">
 
-                                                    <a href="#">
-                                                        <i class="fa-solid fa-user"></i>
-                                                        Profile
-                                                    </a>
+                                                        <a href="{% url 'accounts:profile' %}">
+                                                            <i class="fa-solid fa-user"></i>
+                                                            Profile
+                                                        </a>
 
-                                                    <a href="{% url 'accounts:logout' %}">
-                                                        <i class="fa-solid fa-right-from-bracket"></i>
-                                                        Logout
-                                                    </a>
+                                                        <a href="{% url 'accounts:logout' %}">
+                                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                                            Logout
+                                                        </a>
 
-                                                </div>
-
+                                                    </div>
+                                
                                             </div>
 
                                         {% else %}
@@ -209,7 +210,7 @@
                                                 Sign In
                                             </a>
 
-                                            <a href="registration.html" class="auth-link">
+                                            <a href="{% url 'accounts:register' %}" class="auth-link">
                                                 <i class="fa-solid fa-user-plus"></i>
                                                 Sign Up
                                             </a>
